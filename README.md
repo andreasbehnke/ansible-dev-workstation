@@ -1,6 +1,6 @@
 # ansible-dev-workstation
 
-## role VCM
+## role scm
 * git
 * meld
 
@@ -8,7 +8,7 @@
 * atom editor
 
 ## role java development
-* JDK
+* OpenJDK 8
 * Idea Community Edition
 
 ## role virtualization

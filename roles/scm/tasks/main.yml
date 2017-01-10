@@ -1,0 +1,7 @@
+---
+
+ - name: install git and diff viewer
+   apt: name={{ item }} state=latest
+   with_items:
+     - apt
+     - meld
