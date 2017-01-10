@@ -1,6 +1,7 @@
 ---
 
  - name: install git and diff viewer
+   become: yes
    apt: name={{ item }} state=latest
    with_items:
      - apt
