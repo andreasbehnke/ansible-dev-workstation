@@ -1,0 +1,17 @@
+---
+
+ - name: install openjdk
+   become: yes
+   apt: name={{ item }} state=latest
+   with_items:
+    - openjdk-8-source
+    - openjdk-8-jdk
+    - openjdk-8-jre
+
+ - name: add idea repository
+   become: yes
+   apt_repository: repo="ppa:mmk2410/intellij-idea-community"
+
+ - name: install idea
+   become: yes
+   apt: name=intellij-idea-community state=latest

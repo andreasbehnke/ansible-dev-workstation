@@ -11,3 +11,4 @@
   roles:
    - scm
    - source-code-editor
+   - java-development
