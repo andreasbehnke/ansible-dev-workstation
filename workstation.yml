@@ -2,5 +2,12 @@
 
 - hosts: all
 
+  pre_tasks:
+   - name: update apt cache
+     become: yes
+     apt: update_cache=yes
+     changed_when: False
+
   roles:
    - scm
+   - source-code-editor
