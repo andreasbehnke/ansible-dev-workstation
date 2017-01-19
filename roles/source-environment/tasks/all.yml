@@ -1,4 +1,4 @@
 ---
 
  - name: ensure personal source base folder
-   file: path="{{ ansible_env.HOME }}/src" state=directory
+   file: path="{{ src_base }}" state=directory

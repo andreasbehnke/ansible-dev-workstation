@@ -1,0 +1,2 @@
+---
+src_nodejs_vagrantbox: "{{ src_base }}/nodejs-vagrantbox"
