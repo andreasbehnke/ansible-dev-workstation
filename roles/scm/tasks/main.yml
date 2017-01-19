@@ -4,5 +4,6 @@
    become: yes
    apt: name={{ item }} state=latest
    with_items:
-     - apt
-     - meld
+     - git
+     - meld   # used as diff viewer
+     - mr     # manage multiple repositories
