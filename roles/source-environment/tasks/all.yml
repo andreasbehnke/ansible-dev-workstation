@@ -1,4 +1,0 @@
----
-
- - name: ensure personal source base folder
-   file: path="{{ src_base }}" state=directory

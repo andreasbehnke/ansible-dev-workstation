@@ -1,7 +1,7 @@
 ---
 
  - name: get nodjs box, prevent package poisoning of development host machine
-   git: repo="https://github.com/andreasbehnke/nodejs-vagrantbox.git" dest="{{src_nodejs_vagrantbox}}"
+   git: repo="git@github.com:andreasbehnke/nodejs-vagrantbox.git" dest="{{src_nodejs_vagrantbox}}"
    register: nodejs_vagrantbox_repo
 
  - name: environment configuration
