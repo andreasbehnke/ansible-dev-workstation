@@ -1,25 +1,33 @@
 ---
 
- - name: get nodjs box, prevent package poisoning of development host machine
-   git: repo="git@github.com:andreasbehnke/nodejs-vagrantbox.git" dest="{{src_nodejs_vagrantbox}}"
-   register: nodejs_vagrantbox_repo
+ - name: add key for nodesource repository
+   become: yes
+   apt_key: url="https://deb.nodesource.com/gpgkey/nodesource.gpg.key" state=present
 
- - name: environment configuration
-   template: src=environment.rb.j2 dest={{src_nodejs_vagrantbox}}/environment.rb
+ - name: add repository
+   become: yes
+   apt_repository: repo='deb https://deb.nodesource.com/node_6.x yakkety main' state=present filename='nodesource' update_cache='yes'
 
- - name: drop box if repository changed
-   when: nodejs_vagrantbox_repo.changed
-   command: vagrant destroy -f chdir="{{src_nodejs_vagrantbox}}"
+ - name: add src repository
+   become: yes
+   apt_repository: repo='deb-src https://deb.nodesource.com/node_6.x yakkety main' state=present filename='nodesource' update_cache='yes'
 
- - name: test status of vagrant environment
-   command: vagrant status chdir="{{src_nodejs_vagrantbox}}"
-   register: nodejs_vagrantbox_status
-   changed_when: False
+ - name: install nodejs
+   become: yes
+   apt: name={{ item }} state=latest
+   with_items:
+    - ruby
+    - nodejs
 
- - name: provisioning vagrant box
-   when: nodejs_vagrantbox_status.stdout.find('not created') != -1
-   command: vagrant up chdir="{{src_nodejs_vagrantbox}}"
+ - name: install nodejs modules
+   become: yes
+   npm: name={{ item }} global=yes state=latest
+   with_items:
+    - bower
+    - grunt-cli
 
- - name: stop vagrant box
-   when: nodejs_vagrantbox_status.stdout.find('not created') != -1
-   command: vagrant halt chdir="{{src_nodejs_vagrantbox}}"
+ - name: install ruby modules
+   become: yes
+   gem: name={{ item }} user_install=no state=latest
+   with_items:
+    - sass
