@@ -11,6 +11,7 @@
   roles:
    - scm
    - source-code-editor
+   - database-development
    - java-development
    - virtualization
    - source-environment

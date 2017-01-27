@@ -1,0 +1,8 @@
+---
+
+ - name: install postgres client tools
+   become: yes
+   apt: name={{ item }} state=latest
+   with_items:
+     - postgresql-client
+     - pgadmin3
