@@ -6,3 +6,4 @@
    with_items:
     - virtualbox
     - vagrant
+    - htop # nice to see memory usage
