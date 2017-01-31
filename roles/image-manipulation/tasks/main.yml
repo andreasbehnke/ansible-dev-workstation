@@ -1,0 +1,5 @@
+---
+
+ - name: install gimp
+   become: yes
+   apt: name=gimp state=latest
