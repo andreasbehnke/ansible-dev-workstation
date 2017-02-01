@@ -1,19 +1,12 @@
 # ansible-dev-workstation
 
-## role scm
-* git
-* meld
+This playbook
 
-## role source code editor
-* atom editor
+* will setup a complete development workstation for building
+web applications based on javascript, java, postgres and using virtualization
+tools like vagrant to run development server.
 
-## role java development
-* OpenJDK 8
-* Idea Community Edition
+* is optimized for my personal requirements at work, feel free
+to fork and make your own changes.
 
-## role virtualization
-* virtualbox
-* vagrant
-
-## role web development
-* nodejs, grunt & co in a box
+* is not very sophisticated, it is simple and straight forward.
