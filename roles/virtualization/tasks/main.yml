@@ -1,9 +1,3 @@
 ---
 
- - name: install virtualbox and vagrant
-   become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-    - virtualbox
-    - vagrant
-    - htop # nice to see memory usage
+ - include: vagrant.yml
