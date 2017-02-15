@@ -7,3 +7,7 @@
     - virtualbox
     - vagrant
     - htop # nice to see memory usage
+
+ - name: install vagrant plugin vbguest
+   become: yes
+   gem: name=vagrant-vbguest user_install=no state=latest
