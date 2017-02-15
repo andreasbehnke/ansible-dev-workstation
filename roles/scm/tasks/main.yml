@@ -8,6 +8,10 @@
      - meld   # used as diff viewer
      - mr     # manage multiple repositories
 
+# configure git
+ - name: git configuration
+   template: src=gitconfig.j2 dest="{{ ansible_env.HOME}}/.gitconfig"
+
 # add scm information to bash prompt
 
  - name: ensure bash configuration folder
