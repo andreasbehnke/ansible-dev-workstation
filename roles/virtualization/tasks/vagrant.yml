@@ -6,8 +6,14 @@
    with_items:
     - virtualbox
     - vagrant
-    - htop # nice to see memory usage
+    - ruby-dev # required by vagrant-hosts
+    - htop     # nice to see memory usage
 
- - name: install vagrant plugin vbguest
+ - name: install vagrant plugins - gem
    become: yes
-   gem: name=vagrant-vbguest user_install=no state=latest
+   gem: name={{item}} user_install=no state=latest
+   with_items: "{{vagrant_plugins}}"
+
+ - name: install vagrant plugins - vagrant
+   command: vagrant plugin install {{item}}
+   with_items: "{{vagrant_plugins}}"
