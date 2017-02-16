@@ -17,3 +17,4 @@
  - name: install vagrant plugins - vagrant
    command: vagrant plugin install {{item}}
    with_items: "{{vagrant_plugins}}"
+   changed_when: false
