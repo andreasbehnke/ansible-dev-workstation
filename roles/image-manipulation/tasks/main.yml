@@ -3,3 +3,5 @@
  - name: install gimp
    become: yes
    apt: name=gimp state=latest
+
+# (single-window-mode no) --> .gimp2.8/sessionrc bzw. /etc/gimp/2.0/sessionrc
