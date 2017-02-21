@@ -9,3 +9,12 @@
     - openjdk-8-jre
     - gradle
     - maven
+   tags: java
+
+ # TODO: detect JAVA_HOME: type -p javac|xargs readlink -f|xargs dirname|xargs dirname
+
+ - name: set JAVA_HOME
+   become: yes
+   lineinfile: dest=/etc/environment state=present regexp='^JAVA_HOME' line='JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'
+   register: set_java_home
+   tags: java
