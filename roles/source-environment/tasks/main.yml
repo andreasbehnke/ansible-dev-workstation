@@ -7,7 +7,5 @@
    git: repo="{{ item.url }}" dest="{{ src_base }}/{{ item.name }}" accept_hostkey=yes update=no
    with_items: "{{ dev_repositories }}"
 
- - name: register some repositories with mr
-   command: mr register chdir="{{ src_base }}/{{ item.name }}"
-   with_items: "{{ dev_repositories }}"
-   when: item.register_mr
+ - name: configure mr
+   template: src=mrconfig.j2 dest="{{ ansible_env.HOME}}/.mrconfig" 

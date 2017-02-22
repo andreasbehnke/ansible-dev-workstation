@@ -1,0 +1,8 @@
+[DEFAULT]
+status = git status
+
+{% for repositoy in dev_repositories %}
+[{{src_base}}/{{repositoy.name}}]
+checkout = git clone '{{repositoy.url}}' '{{repositoy.name}}'
+
+{% endfor %}
