@@ -6,4 +6,4 @@
 
  - name: install ansible
    become: yes
-   apt: name=ansible state=latest
+   apt: name=ansible=2.1.1.0-1 state=present
