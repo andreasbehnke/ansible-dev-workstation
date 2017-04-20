@@ -18,7 +18,7 @@
    file: path={{ ansible_env.HOME}}/.bash state=directory
 
  - name: retrieve repo git-aware-prompt
-   git: repo="https://github.com/jimeh/git-aware-prompt.git" dest="{{ ansible_env.HOME}}/.bash/git-aware-prompt"
+   git: repo="https://github.com/andreasbehnke/git-aware-prompt.git" dest="{{ ansible_env.HOME}}/.bash/git-aware-prompt"
 
  - name: configure git aware prompt
    blockinfile: |
