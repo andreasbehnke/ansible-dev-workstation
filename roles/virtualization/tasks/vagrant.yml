@@ -6,8 +6,10 @@
    with_items:
     - virtualbox
     - vagrant
-    - ruby-dev # required by vagrant-hosts
-    - htop     # nice to see memory usage
+    - ruby-dev       # required by vagrant-hosts
+    - htop           # nice to see memory usage
+    - libsqlite3-dev # header files required for building vagrant plugins
+    - g++-multilib   # header files required for building vagrant plugins
 
  - name: install vagrant plugins - gem
    become: yes
