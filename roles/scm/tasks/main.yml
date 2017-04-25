@@ -23,7 +23,7 @@
  - name: configure git aware prompt
    blockinfile: |
      dest='{{ ansible_env.HOME}}/.bashrc'
-     content="export PROMPT_DIRTRIM=1
+     content="export PROMPT_DIRTRIM=2
         export GITAWAREPROMPT=~/.bash/git-aware-prompt
         source \"${GITAWAREPROMPT}/main.sh\"
         export PS1=\"\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ \""
