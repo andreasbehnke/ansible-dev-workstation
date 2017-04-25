@@ -10,12 +10,12 @@
 
   roles:
    - scm
-   #- source-code-editor
-   #- database-development
-   #- java-development
-   #- java-development-ide
-   #- virtualization
-   #- source-environment
-   #- javascript-development
-   #- ansible-development
-   #- image-manipulation
+   - source-code-editor
+   - database-development
+   - java-development
+   - java-development-ide
+   - virtualization
+   - source-environment
+   - javascript-development
+   - ansible-development
+   - image-manipulation
