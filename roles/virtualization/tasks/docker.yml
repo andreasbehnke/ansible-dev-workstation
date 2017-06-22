@@ -11,3 +11,7 @@
  - name: install docker
    become: yes
    apt: name=docker-ce state=latest force=yes
+
+ - name: adding existing user to group docker
+   become: yes
+   user: name='{{ ansible_env.USER }}' groups='docker' state=present append=yes
