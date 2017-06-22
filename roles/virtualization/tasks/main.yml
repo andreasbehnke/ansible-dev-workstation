@@ -1,3 +1,4 @@
 ---
 
  - include: vagrant.yml
+ - include: docker.yml
