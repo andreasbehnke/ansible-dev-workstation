@@ -1,10 +1,20 @@
 ---
+ - name: make sure oracle java repository is removed
+   become: yes
+   apt_repository: repo="ppa:webupd8team/java" state="absent"
+
+ - name: make sure oracle java is removed
+   become: yes
+   apt: name={{item}} state="absent"
+   with_items:
+     - oracle-java7-installer
+     - oracle-java8-installer
 
  - name: install openjdk and build tools
    become: yes
    apt: name={{ item }} state=latest
    with_items:
-    - openjdk-8-source
+    #- openjdk-8-source why is this package missing?
     - openjdk-8-jdk
     - openjdk-8-jre
     - gradle
@@ -15,6 +25,6 @@
 
  - name: set JAVA_HOME
    become: yes
-   lineinfile: dest=/etc/environment state=present regexp='^JAVA_HOME' line='JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'
+   lineinfile: dest=/etc/environment state=present regexp='^JAVA_HOME' line='JAVA_HOME=/usr/lib/jvm/default-java'
    register: set_java_home
    tags: java
