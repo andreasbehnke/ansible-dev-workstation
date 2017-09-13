@@ -2,7 +2,7 @@
 
  - name: add idea repository
    become: yes
-   apt_repository: repo="ppa:mmk2410/intellij-idea-community"
+   apt_repository: repo="ppa:mmk2410/intellij-idea"
 
  - name: install idea
    become: yes
