@@ -1,9 +1,9 @@
 ---
 
- - name: remove old idea repository
-   become: yes
-   apt_repository: repo="ppa:mmk2410/intellij-idea-community" state="absent"
-
  - name: add idea repository
    become: yes
-   apt_repository: repo="ppa:mmk2410/intellij-idea"
+   apt_repository: repo="ppa:mmk2410/intellij-idea-community"
+
+ - name: install idea
+   become: yes
+   apt: name=intellij-idea-community state=latest
