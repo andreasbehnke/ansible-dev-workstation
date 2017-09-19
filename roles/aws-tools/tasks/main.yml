@@ -1,0 +1,5 @@
+---
+
+  - name: install aws cli client
+    become: yes
+    apt: name=awscli
