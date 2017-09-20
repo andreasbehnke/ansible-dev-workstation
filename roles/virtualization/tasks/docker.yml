@@ -12,6 +12,10 @@
    become: yes
    apt: name=docker-ce state=latest force=yes
 
+ - name: do not start docker at boot time (consumes a lot of notebook power), start docker only on demand
+   become: yes
+   systemd: name=docker.service daemon-reload=yes enabled=no
+
  - name: adding existing user to group docker
    become: yes
    user: name='{{ ansible_env.USER }}' groups='docker' state=present append=yes
