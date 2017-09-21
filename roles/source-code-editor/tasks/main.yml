@@ -1,9 +1,9 @@
 ---
 
- - name: add atom repository
+ - name: remove atom repository
    become: yes
-   apt_repository: repo="ppa:webupd8team/atom"
+   apt_repository: repo="ppa:webupd8team/atom" state=absent
 
  - name: install atom editor
    become: yes
-   apt: name=atom state=latest
+   apt: deb=https://atom.io/download/deb
