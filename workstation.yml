@@ -11,6 +11,8 @@
   roles:
    - scm
    - source-code-editor
+   - python-development
+   - ansible-development
    - database-development
    - java-development
    - java-development-ide
@@ -19,5 +21,4 @@
    - javascript-development
    - ansible-development
    - image-manipulation
-   - python-development
    - aws-tools
