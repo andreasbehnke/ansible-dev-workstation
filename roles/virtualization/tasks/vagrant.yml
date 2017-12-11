@@ -6,17 +6,10 @@
    with_items:
     - ruby-dev       # required by vagrant-hosts
     - htop           # nice to see memory usage
-    - libsqlite3-dev # header files required for building vagrant plugins
-    - g++-multilib   # header files required for building vagrant plugins
-
+    
  - name: install vagrant using debian package from hashicorp
    become: yes
    apt: deb={{vagrant_url_deb}}
-
- - name: install vagrant plugins - gem
-   become: yes
-   gem: name={{item}} user_install=no state=latest
-   with_items: "{{vagrant_plugins}}"
 
  - name: install vagrant plugins - vagrant
    command: vagrant plugin install {{item}}

@@ -1,5 +1,9 @@
 ---
 
+ - name: install dependencies
+   become: yes
+   apt: name=software-properties-common state=latest
+
  - name: install ansible repository
    become: yes
    apt_repository: repo="ppa:ansible/ansible"

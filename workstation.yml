@@ -13,12 +13,11 @@
    - source-code-editor
    - python-development
    - ansible-development
+   - virtualization
+   - aws-tools
    - database-development
    - java-development
    - java-development-ide
-   - virtualization
-   - source-environment
    - javascript-development
-   - ansible-development
    - image-manipulation
-   - aws-tools
+   - source-environment
