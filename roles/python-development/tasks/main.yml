@@ -1,9 +1,8 @@
 ---
 
- - name: install python pip, spyder
+ - name: install python pip
    become: yes
    apt: name={{ item }} state=latest
    with_items:
     - python-pip
-    - spyder
    tags: python
