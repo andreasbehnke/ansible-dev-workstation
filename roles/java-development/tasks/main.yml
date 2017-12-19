@@ -2,19 +2,39 @@
 
  - name: install openjdk and build tools
    become: yes
+   tags: java
    apt: name={{ item }} state=latest
    with_items:
     - openjdk-8-source
     - openjdk-8-jdk
     - openjdk-8-jre
-    - gradle
     - maven
-   tags: java
-
- # TODO: detect JAVA_HOME: type -p javac|xargs readlink -f|xargs dirname|xargs dirname
 
  - name: set JAVA_HOME
    become: yes
+   tags: java
    lineinfile: dest=/etc/environment state=present regexp='^JAVA_HOME' line='JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64'
    register: set_java_home
+
+ - name: install gradle - create path
+   become: yes
    tags: java
+   file:
+     path: /opt/gradle
+     state: directory
+
+ - name: install gradle - download
+   become: yes
+   tags: java
+   unarchive:
+     src: "{{gradle_url_zip}}"
+     dest: /opt/gradle
+     remote_src: yes
+
+ - name: install gradle - smylink binary
+   become: yes
+   tags: java
+   file:
+     path: /usr/local/bin/gradle
+     src: "/opt/gradle/gradle-{{gradle_version}}/bin/gradle"
+     state: link

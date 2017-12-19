@@ -1,0 +1,4 @@
+---
+
+  gradle_version: "4.4"
+  gradle_url_zip: "https://services.gradle.org/distributions/gradle-{{gradle_version}}-all.zip"
