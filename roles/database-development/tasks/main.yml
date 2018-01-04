@@ -6,3 +6,7 @@
    with_items:
      - postgresql-client
      - pgadmin3
+
+ - name: install dbeaver
+   become: yes
+   apt: deb={{ dbeaver_url_deb }}  
