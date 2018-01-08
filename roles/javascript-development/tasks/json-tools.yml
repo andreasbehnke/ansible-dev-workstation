@@ -1,0 +1,5 @@
+---
+
+ - name: install jq, a command line tool for filtering json objects
+   become: yes
+   apt: name=jq state=latest
