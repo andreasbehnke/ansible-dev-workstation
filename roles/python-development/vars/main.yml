@@ -1,0 +1,5 @@
+---
+
+  pycharm_version: "2017.3.3"
+  pycharm_url: "https://download-cf.jetbrains.com/python/pycharm-community-{{pycharm_version}}.tar.gz"
+  pycharm_start_script: "/opt/pycharm-community-{{pycharm_version}}/bin/pycharm.sh"

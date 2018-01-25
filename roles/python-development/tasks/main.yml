@@ -1,8 +1,4 @@
 ---
 
- - name: install python pip
-   become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-    - python-pip
-   tags: python
+ - include: python.yml
+ - include: pycharm.yml

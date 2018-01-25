@@ -1,0 +1,9 @@
+---
+
+ - name: download pycharm archive
+   become: yes
+   unarchive: src={{pycharm_url}} dest=/opt/ remote_src=yes
+
+ - name: create symlink
+   become: yes
+   file: src={{pycharm_start_script}} dest=/usr/bin/pycharm state=link
