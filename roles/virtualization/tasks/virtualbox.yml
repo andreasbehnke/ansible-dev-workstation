@@ -8,7 +8,7 @@
 
  - name: configure the VirtualBox APT repositories
    become: yes
-   apt_repository: repo="deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib" state=present
+   apt_repository: repo="deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib" state=present
 
  - name: install VirtualBox
    become: yes

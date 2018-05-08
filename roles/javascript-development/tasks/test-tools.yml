@@ -1,7 +1,6 @@
 ---
 
  - name: install codeceptjs with nightmare integration
-   become: yes
    npm: name={{ item }} global=yes state=latest
    with_items:
     - codeceptjs-nightmare

@@ -1,33 +1,11 @@
 ---
 
- - name: add key for nodesource repository
-   become: yes
-   apt_key: url="https://deb.nodesource.com/gpgkey/nodesource.gpg.key" state=present
+ - name: install nvm manager for current user
+   shell: wget -qO- https://raw.githubusercontent.com/creationix/nvm/{{nvm_version}}/install.sh | bash
 
- - name: add repository
-   become: yes
-   apt_repository: repo='deb https://deb.nodesource.com/node_8.x {{ansible_distribution_release}} main' state=present filename='nodesource' update_cache='yes'
-
- - name: add src repository
-   become: yes
-   apt_repository: repo='deb-src https://deb.nodesource.com/node_8.x {{ansible_distribution_release}} main' state=present filename='nodesource' update_cache='yes'
-
- - name: install nodejs
-   become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-    - ruby
-    - nodejs
-
- - name: install nodejs modules
-   become: yes
-   npm: name={{ item }} global=yes state=latest
-   with_items:
-    - bower
-    - grunt-cli
-
- - name: install ruby modules
-   become: yes
-   gem: name={{ item }} user_install=no state=latest
-   with_items:
-    - sass
+ - name: install node LTS
+   shell: "source ~/.nvm/nvm.sh && nvm install --lts"
+   args:
+     executable: /bin/bash
+   register: nvm_install_result
+   changed_when: "'is already installed.' not in nvm_install_result.stdout and 'is already installed.' not in nvm_install_result.stderr"

@@ -1,7 +1,6 @@
 ---
 
  - name: install serverless for managing aws lambda functions
-   become: yes
    npm: name={{ item }} global=yes state=latest
    with_items:
     - serverless

@@ -1,0 +1,24 @@
+---
+
+ - name: install gradle - create path
+   become: yes
+   tags: java
+   file:
+     path: /opt/gradle
+     state: directory
+
+ - name: install gradle - download
+   become: yes
+   tags: java
+   unarchive:
+     src: "{{gradle_url_zip}}"
+     dest: /opt/gradle
+     remote_src: yes
+
+ - name: install gradle - smylink binary
+   become: yes
+   tags: java
+   file:
+     path: /usr/local/bin/gradle
+     src: "/opt/gradle/gradle-{{gradle_version}}/bin/gradle"
+     state: link

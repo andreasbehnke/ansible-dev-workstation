@@ -4,9 +4,10 @@
    become: yes
    apt_key: url="https://download.docker.com/linux/ubuntu/gpg" state=present
 
+   # TODO: change test to stable, when stable packages for docher-ce are available
  - name: add docker repository
    become: yes
-   apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} stable' state=present filename='docker' update_cache='yes'
+   apt_repository: repo='deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ansible_distribution_release}} test' state=present filename='docker' update_cache='yes'
 
  - name: install docker
    become: yes

@@ -1,7 +1,7 @@
 ---
 
  - include: build-tools.yml
- - include: test-tools.yml
- - include: serverless.yml
+# - include: test-tools.yml
+# - include: serverless.yml
  - include: chromium.yml
  - include: json-tools.yml
