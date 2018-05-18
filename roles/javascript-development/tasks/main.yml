@@ -1,6 +1,6 @@
 ---
 
- - include: build-tools.yml
+ - include: nodejs.yml
 # - include: test-tools.yml
 # - include: serverless.yml
  - include: chromium.yml
