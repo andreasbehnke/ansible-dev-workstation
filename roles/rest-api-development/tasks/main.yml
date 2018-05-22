@@ -1,0 +1,14 @@
+---
+
+  # source: https://blog.bluematador.com/posts/postman-how-to-install-on-ubuntu-1604/
+  - name: install postman native application
+    become: yes
+    get_url: url="https://dl.pstmn.io/download/latest/linux64" dest="/opt/postman.tar.gz"
+
+  - name: untar postman archive
+    become: yes
+    unarchive: src="/opt/postman.tar.gz" dest="/opt" remote_src="yes" owner="root" group="root"
+
+  - name: symlink postman executable
+    become: yes
+    file: state="link" src="/opt/Postman/Postman" dest="/usr/local/bin/postman"
