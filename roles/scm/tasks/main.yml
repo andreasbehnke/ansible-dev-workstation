@@ -12,6 +12,7 @@
 # configure git
  - name: git configuration
    template: src=gitconfig.j2 dest="{{ ansible_env.HOME}}/.gitconfig"
+   when: user_email is defined
 
 # add scm information to bash prompt
 
