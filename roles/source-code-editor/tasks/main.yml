@@ -1,9 +1,4 @@
 ---
 
- - name: remove atom repository
-   become: yes
-   apt_repository: repo="ppa:webupd8team/atom" state=absent
-
  - name: install atom editor
-   become: yes
-   apt: deb=https://atom.io/download/deb
+   shell: "umake ide atom {{bin_base}}/atom"

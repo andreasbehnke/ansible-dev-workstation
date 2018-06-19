@@ -1,4 +1,4 @@
 ---
  - name: install umake
    become: yes
-   apt: name=ubuntu-umake state=latest
+   apt: name=ubuntu-make state=latest
