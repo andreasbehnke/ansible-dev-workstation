@@ -1,4 +1,8 @@
 ---
 
+ - name: install atom editor dependencies (may be a bug of ubuntu-make?)
+   become: yes
+   apt: name=libgconf-2-4 state=latest
+
  - name: install atom editor
    shell: "umake ide atom {{bin_base}}/atom"

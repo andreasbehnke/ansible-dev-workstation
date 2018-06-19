@@ -10,16 +10,16 @@
 
   roles:
    - ubuntu-umake
-   - scm
+   #- scm
    - source-code-editor
-   - python-development
-   - ansible-development
-   - virtualization
-   - aws-tools
-   - database-development
-   - java-development
-   - java-development-ide
-   - javascript-development
-   - image-manipulation
-   - source-environment
-   - rest-api-development
+   #- python-development
+   #- ansible-development
+   #- virtualization
+   #- aws-tools
+   #- database-development
+   #- java-development
+   #- java-development-ide
+   #- javascript-development
+   #- image-manipulation
+   #- source-environment
+   #- rest-api-development
