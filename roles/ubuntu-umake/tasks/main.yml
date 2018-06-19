@@ -1,0 +1,4 @@
+---
+ - name: install umake
+   become: yes
+   apt: name=ubuntu-umake state=latest

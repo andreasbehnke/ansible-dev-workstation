@@ -9,6 +9,7 @@
      changed_when: False
 
   roles:
+   - ubuntu-umake
    - scm
    - source-code-editor
    - python-development
