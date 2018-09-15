@@ -1,0 +1,6 @@
+---
+
+ - name: install grunt build tool
+   npm: name={{ item }} global=yes state=latest
+   with_items:
+    - grunt-cli
