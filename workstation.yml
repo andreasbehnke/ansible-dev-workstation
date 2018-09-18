@@ -17,7 +17,7 @@
    - aws-tools
    - database-development
    - java-development
-   - java-development-ide
+  # - java-development-ide
    - javascript-development
    - image-manipulation
    - source-environment
