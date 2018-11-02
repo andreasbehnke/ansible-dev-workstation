@@ -6,7 +6,7 @@
 
  - name: install ansible repository
    become: yes
-   apt_repository: repo="ppa:ansible/ansible"
+   apt_repository: repo="ppa:ansible/ansible" filename="ansible" update_cache="yes"
 
  - name: install ansible
    become: yes

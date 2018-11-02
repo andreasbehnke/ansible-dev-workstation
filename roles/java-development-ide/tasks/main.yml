@@ -1,12 +1,8 @@
 ---
- - name: remove outdated idea repository
-   become: yes
-   apt_repository: repo="ppa:mmk2410/intellij-idea-community" state=absent
-
  - name: add idea repository
    become: yes
-   apt_repository: repo="ppa:mmk2410/intellij-idea"
+   apt_repository: repo="ppa:mmk2410/intellij-idea" filename="intellij-idea" update_cache="yes"
 
  - name: install idea
    become: yes
-   apt: name=intellij-idea-community state=latest
+   apt: name=intellij-idea-{{intellij_idea_version}} state=latest
