@@ -4,6 +4,7 @@
   vagrant_version: "2.2.0"
   vagrant_url_deb: "https://releases.hashicorp.com/vagrant/{{vagrant_version}}/vagrant_{{vagrant_version}}_{{ansible_architecture}}.deb"
   vagrant_plugins:
+    - vagrant-vbguest
     - vagrant-hosts
   docker_compose_version: "1.22.0"
   docker_compose_url: "https://github.com/docker/compose/releases/download/{{docker_compose_version}}/docker-compose-{{ansible_system}}-{{ansible_architecture}}"
