@@ -1,6 +1,6 @@
 ---
 
-- hosts: git_server
+- hosts: git-server
 
   pre_tasks:
    - name: update apt cache
@@ -9,4 +9,5 @@
      changed_when: False
 
   roles:
+   - remote-access
    - git-server
