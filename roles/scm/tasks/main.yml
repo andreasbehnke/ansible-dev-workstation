@@ -2,12 +2,13 @@
 
  - name: install git and diff viewer
    become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-     - git
-     - git-crypt # supports partial repository encryption
-     - meld   # used as diff viewer
-     - mr     # manage multiple repositories
+   apt:
+     name:
+      - git
+      - git-crypt # supports partial repository encryption
+      - meld   # used as diff viewer
+      - mr     # manage multiple repositories
+     state: latest
 
 # configure git
  - name: git configuration

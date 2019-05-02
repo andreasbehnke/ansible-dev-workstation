@@ -2,8 +2,9 @@
 
  - name: install python pip
    become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-    - python-pip
-    - python-dev
+   apt:
+     name:
+       - python-dev
+       - python-pip
+     state: latest
    tags: python

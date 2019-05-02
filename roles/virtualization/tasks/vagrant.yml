@@ -2,11 +2,12 @@
 
  - name: install vagrant dependencies
    become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-    - ruby-dev       # required by vagrant-hosts
-    - htop           # nice to see memory usage
-    
+   apt:
+     name:
+       - ruby-dev       # required by vagrant-hosts
+       - htop           # nice to see memory usage
+     state: latest
+     
  - name: install vagrant using debian package from hashicorp
    become: yes
    apt: deb={{vagrant_url_deb}}

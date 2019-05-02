@@ -1,12 +1,12 @@
 ---
-
  - name: install postgres client tools
    become: yes
-   apt: name={{ item }} state=latest
-   with_items:
-     - postgresql-client
-     - pgadmin3
+   apt:
+     name:
+       - postgresql-client
+       - pgadmin3
+     state: latest
 
  - name: install dbeaver
    become: yes
-   apt: deb={{ dbeaver_url_deb }}  
+   apt: deb={{ dbeaver_url_deb }}

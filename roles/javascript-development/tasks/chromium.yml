@@ -2,7 +2,8 @@
 
    - name: install chromium because this browser is best choice when it comes to debugging of javascript code
      become: yes
-     apt: name={{ item }} state=latest
-     with_items:
-       - chromium-browser
-       - chromium-browser-l10n
+     apt:
+       name:
+         - chromium-browser
+         - chromium-browser-l10n
+       state: latest

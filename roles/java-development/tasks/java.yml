@@ -3,13 +3,14 @@
  - name: install openjdk and build tools
    become: yes
    tags: java
-   apt: name={{ item }} state=latest
-   with_items:
-    - openjdk-8-source
-    - openjdk-8-jdk
-    - openjdk-8-jre
-    - maven
-
+   apt:
+     name:
+       - openjdk-8-source
+       - openjdk-8-jdk
+       - openjdk-8-jre
+       - maven
+     state: latest
+   
  - name: set JAVA_HOME
    become: yes
    tags: java
