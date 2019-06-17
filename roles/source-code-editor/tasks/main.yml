@@ -1,9 +1,9 @@
 ---
 
- - name: remove atom repository
+ - name: uninstall atom editor
    become: yes
-   apt_repository: repo="ppa:webupd8team/atom" state=absent
+   apt: name="atom" state="absent"
 
- - name: install atom editor
+ - name: install ms visual code
    become: yes
-   apt: deb=https://atom.io/download/deb
+   apt: deb=https://go.microsoft.com/fwlink/?LinkID=760868
